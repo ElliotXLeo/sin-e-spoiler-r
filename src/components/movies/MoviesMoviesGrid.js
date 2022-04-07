@@ -1,6 +1,6 @@
 import data from '../../assets/json/db.json';
 import '../../styles/css/Movies.css';
-import MoviesMovie from './MoviesMovie';
+import MoviesMovieCard from './MoviesMovieCard';
 
 const MoviesMoviesGrid = () => {
 
@@ -11,7 +11,7 @@ const MoviesMoviesGrid = () => {
         <ul className="movies__movie-list">
           {data.map((movie) => {
             return (
-              <MoviesMovie
+              <MoviesMovieCard
                 movie={movie}
               />
             );
