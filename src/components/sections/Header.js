@@ -1,3 +1,6 @@
+import {
+  NavLink
+} from 'react-router-dom';
 import { useRef, useEffect } from 'react';
 import logo from '../../assets/img/logo.png';
 import '../../styles/css/Header.css';
@@ -64,9 +67,9 @@ const Header = () => {
     <header className="header animate__animated animate__fadeIn">
       <nav className="header-nav">
         <div className="header-nav__container">
-          <a href="#" className="header-nav__logo-container">
+          <NavLink to="/" className="header-nav__logo-container">
             <img src={logo} alt="Logo Web" className="header-nav__logo" />
-          </a>
+          </NavLink>
           <div className="header-nav__theme-menu-container">
             <button
               className="header-nav__theme-icon-container"
@@ -83,7 +86,7 @@ const Header = () => {
             </figure>
             <ul className="header-nav__menu-link-list">
               <li className="header-nav__menu-link-item">
-                <a href="#" className="header-nav__menu-link">Estrenos</a>
+                <NavLink to="/estrenos" className="header-nav__menu-link">Estrenos</NavLink>
               </li>
               <li className="header-nav__menu-link-item">
                 <a href="https://www.linkedin.com/in/elliotgaramendi/" className="header-nav__menu-link header-nav__menu-link--active" target="_blank" rel="noopener noreferrer">Elliot</a>
