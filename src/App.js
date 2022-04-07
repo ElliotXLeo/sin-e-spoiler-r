@@ -14,6 +14,7 @@ function App() {
       <main className='main'>
         <Routes>
           <Route exact path="/estrenos" element={<section className="section animate__animated animate__fadeIn">Estrenos</section>} />
+          <Route exact path="/movies/:movieId" element={<section className="section animate__animated animate__fadeIn">Detalle</section>} />
           <Route exact path="/" element={<Movies />} />
         </Routes>
       </main>
