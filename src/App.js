@@ -4,8 +4,8 @@ import {
   Route
 } from 'react-router-dom';
 import './App.css';
-import MoviesMoviesGrid from './components/movies/MoviesMoviesGrid';
 import Header from './components/sections/Header';
+import Movies from './pages/Movies';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <main className='main'>
         <Routes>
           <Route exact path="/estrenos" element={<section className="section animate__animated animate__fadeIn">Estrenos</section>} />
-          <Route exact path="/" element={<MoviesMoviesGrid />} />
+          <Route exact path="/" element={<Movies />} />
         </Routes>
       </main>
     </Router>
