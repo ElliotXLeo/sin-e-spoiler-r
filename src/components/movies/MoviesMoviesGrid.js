@@ -1,5 +1,6 @@
 import data from '../../assets/json/db.json';
 import '../../styles/css/Movies.css';
+import MoviesMovie from './MoviesMovie';
 
 const MoviesMoviesGrid = () => {
 
@@ -8,23 +9,11 @@ const MoviesMoviesGrid = () => {
       <div className="movies__container">
         <h1 className="movies__title">🎥 Movies 🎥</h1>
         <ul className="movies__movie-list">
-          {data.map((element) => {
-            const { id, title, poster_path } = element;
-            const imageEndpoint = `https://image.tmdb.org/t/p/w300${poster_path}`;
+          {data.map((movie) => {
             return (
-              <li
-                key={id}
-                className="movies__movie"
-              >
-                <figure className="movies__movie-poster-container">
-                  <img
-                    src={imageEndpoint}
-                    alt={title}
-                    className="movies__movie-poster"
-                  />
-                </figure>
-                <h2 className="movies__movie-title">{title}</h2>
-              </li>
+              <MoviesMovie
+                movie={movie}
+              />
             );
           })}
         </ul>
