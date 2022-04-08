@@ -17,7 +17,7 @@
 }
 
 .body {
-  background-color: var(--secondary-theme-color);
+  background-color: var(--primary-theme-color);
   color: var(--text-color);
   font-family: 'Open Sans', sans-serif;
   margin: 0;

@@ -4,6 +4,7 @@ import {
   Route
 } from 'react-router-dom';
 import './App.css';
+import MoviesMovieDetails from './components/movies/MoviesMovieDetails';
 import Header from './components/sections/Header';
 import Movies from './pages/Movies';
 
@@ -14,7 +15,7 @@ function App() {
       <main className='main'>
         <Routes>
           <Route exact path="/estrenos" element={<section className="section animate__animated animate__fadeIn">Estrenos</section>} />
-          <Route exact path="/movies/:movieId" element={<section className="section animate__animated animate__fadeIn">Detalle</section>} />
+          <Route exact path="/movies/:movieId" element={<MoviesMovieDetails />} />
           <Route exact path="/" element={<Movies />} />
         </Routes>
       </main>
