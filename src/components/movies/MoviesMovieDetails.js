@@ -1,36 +1,12 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import useApi from "../../hooks/useApi";
 
 const MoviesMovieDetails = () => {
 
-  const [movie, setMovie] = useState({});
-
   const { movieId } = useParams();
+  const recurso = `/movie/${movieId}`;
 
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const url = `https://api.themoviedb.org/3/movie/${movieId}`;
-        const options = {
-          method: 'GET',
-          headers: {
-            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZjlmNzA1YjQ3ODRmNTQ3Mzc2ZjJjZDg4Mzg5MTY4NiIsInN1YiI6IjYyNTA1MjFlYTA1NWVmMDA2NTU3NTEzOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.jYHK5Rt55pBTHvGjrEGTjAXRVlGOdnDBpqBxhnhrCL4',
-            'Content-Type': 'application/json;charset=utf-8'
-          },
-          url,
-        };
-        const response = await axios(options);
-        const data = response.data;
-        setMovie(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getData();
-  }, [movieId]);
-
+  const movie = useApi(recurso);
   const { poster_path, title, overview, genres } = movie;
   const imageEndpoint = `https://image.tmdb.org/t/p/w500${poster_path}`;
 
