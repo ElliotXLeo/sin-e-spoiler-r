@@ -5,10 +5,7 @@ const MoviesMovie = ({ movie }) => {
   const imageEndpoint = `https://image.tmdb.org/t/p/w300${poster_path}`;
 
   return (
-    <li
-      key={id}
-      className="movies__movie"
-    >
+    <li className="movies__movie">
       <Link to={`/movies/${id}`} className="movies__movie-link">
         <figure className="movies__movie-poster-container">
           <img
