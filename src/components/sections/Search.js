@@ -3,31 +3,26 @@ import { useNavigate } from "react-router-dom";
 import { useQuery } from "../../hooks/useQuery";
 
 const Search = () => {
-
-  const navigate = useNavigate();
-  const [movie, setMovie] = useState({
-    headerNavFormName: ''
-  });
-  
-  const { headerNavFormName } = movie;
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    navigate(`/?search=${headerNavFormName}`);
-  };
-
-  const handleChange = (e) => {
-    setMovie({
-      ...movie,
-      [e.target.id]: e.target.value
-    });
-  };
-
   const query = useQuery();
   const search = query.get('search');
 
+  const navigate = useNavigate();
+
+  const [movie, setMovie] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/?search=${e.target.value}`);
+  };
+
+  const handleChange = (e) => {
+    setMovie(e.target.value);
+    navigate(`/?search=${e.target.value}`);
+  };
+
+
   useEffect(() => {
-    setMovie((search ? { headerNavFormName: search } : { headerNavFormName: '' }));
+    setMovie((search ? search : ''));
   }, [search]);
 
   return (
@@ -39,9 +34,9 @@ const Search = () => {
           type="text"
           placeholder="Película"
           className="header-nav__form-input"
-          id="headerNavFormName"
-          name="header-nav__form-name"
-          value={headerNavFormName}
+          id="search"
+          name="search"
+          value={movie}
           onChange={handleChange}
           required
         />

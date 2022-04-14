@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import useApi from '../../hooks/useApi';
+import { useDebounce } from '../../hooks/useDebounce';
 import { useQuery } from '../../hooks/useQuery';
 import '../../styles/css/Movies.css';
 import Spinner from '../sections/Spinner';
@@ -7,17 +8,19 @@ import MoviesMovieCard from './MoviesMovieCard';
 
 const MoviesMoviesGrid = () => {
 
+  
   const [page, setPage] = useState(1);
   const moviesButtonPrev = useRef();
   const moviesButtonNext = useRef();
-
+  
   const query = useQuery();
   const search = query.get('search');
+  const debouncedSearch = useDebounce(search, 300);
 
   let recurso = '';
 
-  if (search) {
-    recurso = `/search/movie?query=${search}&page=${page}`;
+  if (debouncedSearch) {
+    recurso = `/search/movie?query=${debouncedSearch}&page=${page}`;
   } else {
     recurso = `/discover/movie?page=${page}`;
   }
@@ -47,7 +50,7 @@ const MoviesMoviesGrid = () => {
 
   useEffect(() => {
     setPage(1);
-  }, [search]);
+  }, [debouncedSearch]);
 
   return (
     <section className="movies animate__animated animate__fadeIn">
