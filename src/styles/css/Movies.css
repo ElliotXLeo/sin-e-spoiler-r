@@ -186,6 +186,42 @@
   margin: 0;
 }
 
+.movies__button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.movies__button {
+  background-color: var(--button-color);
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow:
+    0 0 0 0.125rem var(--primary-shadow-color),
+    0 0 0 0.25rem var(--primary-shadow-color);
+  border: 0.125rem solid var(--button-color);
+  color: var(--button-text-color);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.5em 1.5em;
+  cursor: pointer;
+  transition: var(--all-transitions);
+}
+
+.movies__button:hover {
+  background-color: var(--button-color-active);
+  box-shadow:
+    0 0 0 0.125rem var(--primary-highlight-color),
+    0 0 0 0.25rem var(--primary-highlight-color),
+    0 0 0.5rem 0 var(--secondary-highlight-color),
+    0 0 0.75rem 0 var(--secondary-highlight-color);
+}
+
+.movies__button--hidden {
+  visibility: hidden;
+}
+
 @media (min-width: 854px) {
 
   .movies__movie-list {

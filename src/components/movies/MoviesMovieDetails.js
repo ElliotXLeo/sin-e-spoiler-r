@@ -7,7 +7,7 @@ const MoviesMovieDetails = () => {
   const { movieId } = useParams();
   const recurso = `/movie/${movieId}`;
 
-  const movie = useApi(recurso);
+  const [movie] = useApi(recurso);
   const { poster_path, title, overview, genres } = movie;
   const imageEndpoint = `https://image.tmdb.org/t/p/w500${poster_path}`;
 

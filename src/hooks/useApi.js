@@ -29,7 +29,7 @@ const useApi = (recurso) => {
     fetchApi();
   }, [method, url]);
 
-  return (data);
+  return ([data]);
 }
 
 export default useApi;
