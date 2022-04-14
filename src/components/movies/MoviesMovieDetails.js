@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import useApi from "../../hooks/useApi";
+import Spinner from "../sections/Spinner";
 
 const MoviesMovieDetails = () => {
 
@@ -15,7 +16,7 @@ const MoviesMovieDetails = () => {
       {
         Object.keys(movie).length === 0 ?
           (
-            null
+            <Spinner />
           )
           :
           (

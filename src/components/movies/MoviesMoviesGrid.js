@@ -1,6 +1,6 @@
-import axios from 'axios';
 import useApi from '../../hooks/useApi';
 import '../../styles/css/Movies.css';
+import Spinner from '../sections/Spinner';
 import MoviesMovieCard from './MoviesMovieCard';
 
 const MoviesMoviesGrid = () => {
@@ -17,7 +17,7 @@ const MoviesMoviesGrid = () => {
           {
             Object.keys(movies).length === 0 ?
               (
-                null
+                <Spinner />
               )
               :
               (
