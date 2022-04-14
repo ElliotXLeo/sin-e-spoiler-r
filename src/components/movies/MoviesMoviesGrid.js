@@ -7,7 +7,6 @@ import MoviesMovieCard from './MoviesMovieCard';
 
 const MoviesMoviesGrid = () => {
 
-  const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
   const moviesButtonPrev = useRef();
   const moviesButtonNext = useRef();
@@ -23,29 +22,28 @@ const MoviesMoviesGrid = () => {
     recurso = `/discover/movie?page=${page}`;
   }
 
-  const [data] = useApi(recurso);
+  const [movies] = useApi(recurso);
 
   const previousMovies = () => {
     moviesButtonPrev.current.disabled = true;
-    data.page > 1 && setPage(page - 1);
+    movies.page > 1 && setPage(page - 1);
     window.scroll(0, 0);
   };
 
   const nextMovies = () => {
     moviesButtonNext.current.disabled = true;
-    data.page < data.total_pages && setPage(page + 1);
+    movies.page < movies.total_pages && setPage(page + 1);
     window.scroll(0, 0);
   };
 
   useEffect(() => {
-    Object.keys(data).length > 0 && setMovies(data.results);
     if (moviesButtonPrev.current) {
       moviesButtonPrev.current.disabled = false;
     }
     if (moviesButtonNext.current) {
       moviesButtonNext.current.disabled = false;
     }
-  }, [data]);
+  }, [movies]);
 
   useEffect(() => {
     setPage(1);
@@ -56,7 +54,7 @@ const MoviesMoviesGrid = () => {
       <div className="movies__container">
         <h1 className="movies__title">🎥 Movies 🎥</h1>
         {
-          Object.keys(data).length === 0 ?
+          Object.keys(movies).length === 0 ?
             (
               <Spinner />
             )
@@ -64,7 +62,7 @@ const MoviesMoviesGrid = () => {
             (
               <>
                 <ul className="movies__movie-list">
-                  {movies.map((movie) => {
+                  {movies.results.map((movie) => {
                     return (
                       <MoviesMovieCard
                         key={movie.id}
@@ -75,14 +73,14 @@ const MoviesMoviesGrid = () => {
                 </ul>
                 <div className="movies__button-container">
                   <button
-                    className={`movies__button ${data.page <= 1 ? 'movies__button--hidden' : ''}`}
+                    className={`movies__button ${movies.page <= 1 ? 'movies__button--hidden' : ''}`}
                     onClick={previousMovies}
                     ref={moviesButtonPrev}
                   >
                     Anterior
                   </button>
                   <button
-                    className={`movies__button ${data.page >= data.total_pages ? 'movies__button--hidden' : ''}`}
+                    className={`movies__button ${movies.page >= movies.total_pages ? 'movies__button--hidden' : ''}`}
                     onClick={nextMovies}
                     ref={moviesButtonNext}
                   >Siguiente</button>
