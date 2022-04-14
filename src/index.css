@@ -3,15 +3,16 @@
   --primary-theme-color: #20232a;
   --secondary-theme-color: #282c34;
   --text-color: #fff;
-  --shadow-color: #8888;
+  --primary-shadow-color: #8888;
+  --secondary-shadow-color: #21242c80;
   --button-color: #61dafb;
   --button-color-active: #fff;
   --button-text-color: #000;
-  --padding-section: 2rem 0;
-  --padding-container: 0 2rem;
-  --max-width-container: 1024px;
   --primary-highlight-color: #61dafb;
   --secondary-highlight-color: #ffd700;
+  --padding-section: 4rem 0;
+  --padding-container: 0 2rem;
+  --max-width-container: 1024px;
   --border-radius: 0.5rem;
   --all-transitions: all 0.25s;
 }
@@ -28,7 +29,8 @@
   --primary-theme-color: #fff;
   --secondary-theme-color: #f5f5f5;
   --text-color: #000;
-  --shadow-color: #2228;
+  --primary-shadow-color: #2228;
+  --secondary-shadow-color: rgba(255, 255, 255, 0.875);
 }
 
 @keyframes sk-bounce {

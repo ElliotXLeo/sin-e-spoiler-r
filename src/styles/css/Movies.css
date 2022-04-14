@@ -2,10 +2,6 @@
   padding: var(--padding-section);
 }
 
-.movies--pt-4 {
-  padding-top: 4rem;
-}
-
 .movies__container {
   display: flex;
   flex-direction: column;
@@ -60,7 +56,7 @@
 
 .movies__movie-poster-container {
   display: flex;
-  background-color: var(--shadow-color);
+  background-color: var(--primary-shadow-color);
   border-radius: var(--border-radius);
   overflow: hidden;
   width: 220px;
@@ -132,7 +128,7 @@
 
 .movie-details__card-poster-container {
   display: flex;
-  background-color: var(--shadow-color);
+  background-color: var(--primary-shadow-color);
   border-radius: var(--border-radius);
   overflow: hidden;
   width: 268px;

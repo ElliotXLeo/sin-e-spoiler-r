@@ -4,6 +4,7 @@ import {
 import { useRef, useEffect } from 'react';
 import logo from '../../assets/img/logo.png';
 import '../../styles/css/Header.css';
+import Search from './Search';
 
 const Header = () => {
 
@@ -70,6 +71,7 @@ const Header = () => {
           <NavLink to="/" className="header-nav__logo-container">
             <img src={logo} alt="Logo Web" className="header-nav__logo" />
           </NavLink>
+          <Search />
           <div className="header-nav__theme-menu-container">
             <button
               className="header-nav__theme-icon-container"

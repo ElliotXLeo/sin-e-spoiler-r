@@ -10,7 +10,7 @@ const MoviesMoviesGrid = () => {
 
 
   return (
-    <section className="movies movies--pt-4 animate__animated animate__fadeIn">
+    <section className="movies animate__animated animate__fadeIn">
       <div className="movies__container">
         <h1 className="movies__title">🎥 Movies 🎥</h1>
         <ul className="movies__movie-list">

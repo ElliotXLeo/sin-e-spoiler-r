@@ -9,7 +9,7 @@
 
 .header--scroll {
   background-color: var(--primary-theme-color);
-  box-shadow: 0 0.125rem 0.125rem 0 var(--shadow-color);
+  box-shadow: 0 0.125rem 0.125rem 0 var(--primary-shadow-color);
 }
 
 .header-nav {
@@ -39,6 +39,72 @@
   height: 100%;
 }
 
+
+.header-nav__form {
+  display: flex;
+}
+
+.header-nav__form-inputs {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  box-shadow:
+    0 0 0 0.125rem var(--primary-shadow-color),
+    0 0 0 0.25rem var(--primary-shadow-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: var(--all-transitions);
+}
+
+.header-nav__form-inputs:hover {
+  box-shadow:
+    0 0 0 0.125rem var(--primary-highlight-color),
+    0 0 0 0.25rem var(--primary-highlight-color),
+    0 0 0.5rem 0 var(--secondary-highlight-color),
+    0 0 0.75rem 0 var(--secondary-highlight-color);
+}
+
+.header-nav__form-input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-color);
+  padding: 0 0.75rem;
+  box-sizing: border-box;
+  transition: var(--all-transitions);
+}
+
+.header-nav__form-input:invalid {
+  text-shadow:
+    0 0 0.25rem crimson,
+    0 0 0.5rem crimson;
+}
+
+.header-nav__form-input:focus {
+  text-shadow:
+    0 0 0.25rem var(--primary-highlight-color),
+    0 0 0.5rem var(--primary-highlight-color);
+}
+
+.header-nav__form-input::placeholder {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.header-nav__form-button {
+  background-color: var(--button-color);
+  border: none;
+  color: var(--button-text-color);
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: var(--all-transitions);
+}
+
+.header-nav__form-button:hover {
+  background-color: var(--button-color-active);
+}
+
 .header-nav__theme-menu-container {
   display: flex;
   align-items: center;
@@ -66,10 +132,10 @@
   height: 1.625rem;
   border-radius: 50%;
   box-shadow:
-    0 0 0.125rem 0 var(--shadow-color),
-    0 0 0.25rem 0 var(--shadow-color),
-    0 0 0.375rem 0 var(--shadow-color),
-    0 0 0.5rem 0 var(--shadow-color);
+    0 0 0.125rem 0 var(--primary-shadow-color),
+    0 0 0.25rem 0 var(--primary-shadow-color),
+    0 0 0.375rem 0 var(--primary-shadow-color),
+    0 0 0.5rem 0 var(--primary-shadow-color);
   transition: var(--all-transitions);
 }
 
