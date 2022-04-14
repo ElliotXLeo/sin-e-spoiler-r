@@ -68,24 +68,10 @@ const Header = () => {
     <header className="header animate__animated animate__fadeIn">
       <nav className="header-nav">
         <div className="header-nav__container">
-          <NavLink to="/" className="header-nav__logo-container">
-            <img src={logo} alt="Logo Web" className="header-nav__logo" />
-          </NavLink>
-          <Search />
-          <div className="header-nav__theme-menu-container">
-            <button
-              className="header-nav__theme-icon-container"
-              ref={headerNavThemeIconContainer}
-              onClick={toggleTheme}
-            >
-              <span className="header-nav__theme-icon">🌚</span>
-              <span className="header-nav__theme-icon">🌞</span>
-            </button>
-            <figure className="header-nav__menu-icon-container" id="headerNavMenuIconContainer">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" className="header-nav__menu-icon">
-                <path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path>
-              </svg>
-            </figure>
+          <div className="header-nav__link-container">
+            <NavLink to="/" className="header-nav__link-logo-container">
+              <img src={logo} alt="Logo Web" className="header-nav__link-logo" />
+            </NavLink>
             <ul className="header-nav__menu-link-list">
               <li className="header-nav__menu-link-item">
                 <NavLink to="/estrenos" className="header-nav__menu-link">Estrenos</NavLink>
@@ -104,6 +90,22 @@ const Header = () => {
                 </svg>
               </li>
             </ul>
+          </div>
+          <div className="header-nav__form-theme-menu-container">
+            <Search />
+            <button
+              className="header-nav__theme-icon-container"
+              ref={headerNavThemeIconContainer}
+              onClick={toggleTheme}
+            >
+              <span className="header-nav__theme-icon">🌚</span>
+              <span className="header-nav__theme-icon">🌞</span>
+            </button>
+            <figure className="header-nav__menu-icon-container" id="headerNavMenuIconContainer">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" className="header-nav__menu-icon">
+                <path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path>
+              </svg>
+            </figure>
           </div>
         </div>
       </nav>

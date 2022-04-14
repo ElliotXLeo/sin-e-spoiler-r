@@ -4,6 +4,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  background-color: var(--secondary-shadow-color);
   transition: var(--all-transitions);
 }
 
@@ -13,12 +14,12 @@
 }
 
 .header-nav {
-  padding: 0.5em 0;
+  padding: 1em 0;
   transition: var(--all-transitions);
 }
 
 .header-nav--scroll {
-  padding: 0.25em 0;
+  padding: 0.5em 0;
 }
 
 .header-nav__container {
@@ -30,23 +31,32 @@
   padding: var(--padding-container);
 }
 
-.header-nav__logo-container {
+.header-nav__link-container {
   display: flex;
-  height: 3rem;
+  gap: 2rem;
 }
 
-.header-nav__logo {
+.header-nav__link-logo-container {
+  display: flex;
+  height: 2rem;
+}
+
+.header-nav__link-logo {
   height: 100%;
 }
 
+.header-nav__form-theme-menu-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
 .header-nav__form {
   display: flex;
 }
 
 .header-nav__form-inputs {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  display: flex;
   box-shadow:
     0 0 0 0.125rem var(--primary-shadow-color),
     0 0 0 0.25rem var(--primary-shadow-color);
@@ -64,11 +74,12 @@
 }
 
 .header-nav__form-input {
+  max-width: 128px;
   background-color: transparent;
   border: none;
   outline: none;
   color: var(--text-color);
-  padding: 0 0.75rem;
+  padding: 0 0 0 0.75rem;
   box-sizing: border-box;
   transition: var(--all-transitions);
 }
@@ -91,24 +102,23 @@
 }
 
 .header-nav__form-button {
-  background-color: var(--button-color);
+  background-color: transparent;
   border: none;
-  color: var(--button-text-color);
-  font-weight: 700;
-  padding: 0.5rem 1rem;
+  text-shadow:
+    0 0 0.25rem var(--primary-highlight-color),
+    0 0 0.5rem var(--primary-highlight-color);
   box-sizing: border-box;
+  padding: 0.25rem 0.5rem;
   cursor: pointer;
   transition: var(--all-transitions);
 }
 
 .header-nav__form-button:hover {
-  background-color: var(--button-color-active);
-}
-
-.header-nav__theme-menu-container {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  text-shadow:
+    0 0 0.125rem var(--primary-highlight-color),
+    0 0 0.25rem var(--primary-highlight-color),
+    0 0 0.375rem var(--secondary-highlight-color),
+    0 0 0.5rem var(--secondary-highlight-color);
 }
 
 .header-nav__theme-icon-container {
@@ -124,7 +134,7 @@
 }
 
 .header-nav__theme-icon-container::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   background-color: var(--primary-theme-color);
@@ -163,23 +173,24 @@
 }
 
 .header-nav__menu-link-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
   background-image: linear-gradient(to top, var(--primary-theme-color), var(--secondary-theme-color));
   margin: 0;
   padding: 0;
   opacity: 0;
   pointer-events: none;
-  transition: var(--all-transitions);
   list-style: none;
+  transition: var(--all-transitions);
 }
 
 .header-nav__menu-link-list--open {
@@ -212,34 +223,36 @@
   transition: var(--all-transitions);
 }
 
-.header-nav__menu-link::before {
+.header-nav__menu-link.active,
+.header-nav__menu-link--active,
+.header-nav__menu-link:hover {
+  color: var(--primary-highlight-color);
+}
+
+.header-nav__menu-link::after {
   content: '';
   position: absolute;
   left: 0;
   bottom: -0.125rem;
   width: 0;
-  height: 0.125rem;
+  height: 0.0625rem;
   background-color: var(--secondary-highlight-color);
   transition: var(--all-transitions);
 }
 
-.header-nav__menu-link--active,
-.header-nav__menu-link.active,
-.header-nav__menu-link:hover {
-  color: var(--primary-highlight-color);
-}
-
-.header-nav__menu-link--active::before,
-.header-nav__menu-link.active::before,
-.header-nav__menu-link:hover::before {
+.header-nav__menu-link.active::after,
+.header-nav__menu-link--active::after,
+.header-nav__menu-link:hover::after {
   width: 100%;
 }
 
 @media (min-width: 854px) {
+  .header-nav__link-logo-container {
+    height: 2.5rem;
+  }
 
-  .header-nav__theme-menu-container {
-    flex-direction: row-reverse;
-    gap: 1rem;
+  .header-nav__form-input {
+    max-width: 256px;
   }
 
   .header-nav__menu-icon-container,
@@ -251,6 +264,7 @@
     position: static;
     flex-direction: row;
     background-image: none;
+    gap: 1rem;
     opacity: 1;
     width: auto;
     pointer-events: auto;
