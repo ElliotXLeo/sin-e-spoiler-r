@@ -1,13 +1,23 @@
 import useApi from '../../hooks/useApi';
+import { useQuery } from '../../hooks/useQuery';
 import '../../styles/css/Movies.css';
 import Spinner from '../sections/Spinner';
 import MoviesMovieCard from './MoviesMovieCard';
 
 const MoviesMoviesGrid = () => {
 
-  const recurso = '/discover/movie';
-  const movies = useApi(recurso);
+  const query = useQuery();
+  const search = query.get('search');
 
+  let recurso = '';
+
+  if (search) {
+    recurso = `/search/movie?query=${search}`;
+  } else {
+    recurso = '/discover/movie';
+  }
+
+  const movies = useApi(recurso);
 
   return (
     <section className="movies animate__animated animate__fadeIn">
