@@ -20,8 +20,8 @@
   text-align: center;
   margin: 0;
   text-shadow:
-    0 0 0.25rem var(--primary-highlight),
-    0 0 0.5rem var(--primary-highlight);
+    0 0 0.25rem var(--primary-highlight-color),
+    0 0 0.5rem var(--primary-highlight-color);
 }
 
 .movies__movie-list {
@@ -43,9 +43,9 @@
 .movies__movie:hover {
   border-radius: var(--border-radius);
   box-shadow:
-    0 0 0.25rem var(--primary-highlight),
-    0 0 0.5rem var(--primary-highlight),
-    0 0 0.75rem var(--primary-highlight);
+    0 0 0.25rem var(--primary-highlight-color),
+    0 0 0.5rem var(--primary-highlight-color),
+    0 0 0.75rem var(--primary-highlight-color);
   filter: brightness(112.5%);
   transform: scale(1.05);
 }
@@ -83,8 +83,8 @@
   font-weight: 500;
   text-align: center;
   text-shadow:
-    0 0 0.25rem var(--primary-highlight),
-    0 0 0.5rem var(--primary-highlight);
+    0 0 0.25rem var(--primary-highlight-color),
+    0 0 0.5rem var(--primary-highlight-color);
   margin: 0;
 }
 
@@ -108,8 +108,8 @@
   margin: 0;
   padding-top: 2rem;
   text-shadow:
-    0 0 0.25rem var(--primary-highlight),
-    0 0 0.5rem var(--primary-highlight);
+    0 0 0.25rem var(--primary-highlight-color),
+    0 0 0.5rem var(--primary-highlight-color);
 }
 
 .movie-details__card {
@@ -122,12 +122,12 @@
   max-width: 300px;
   padding: 1em;
   box-sizing: border-box;
-  box-shadow: 1rem 1rem 0 var(--primary-highlight);
+  box-shadow: 1rem 1rem 0 var(--primary-highlight-color);
   transition: var(--all-transitions);
 }
 
 .movie-details__card:hover {
-  box-shadow: -1rem -1rem 0 var(--secondary-highlight);
+  box-shadow: -1rem -1rem 0 var(--secondary-highlight-color);
 }
 
 .movie-details__card-poster-container {
@@ -161,8 +161,8 @@
 .movie-details__card-overview-title {
   font-size: 1.25rem;
   text-shadow:
-    0 0 0.25rem var(--primary-highlight),
-    0 0 0.5rem var(--primary-highlight);
+    0 0 0.25rem var(--primary-highlight-color),
+    0 0 0.5rem var(--primary-highlight-color);
   margin: 0;
 }
 
@@ -180,8 +180,8 @@
 .movie-details__card-genders-title {
   font-size: 1.25rem;
   text-shadow:
-    0 0 0.25rem var(--primary-highlight),
-    0 0 0.5rem var(--primary-highlight);
+    0 0 0.25rem var(--primary-highlight-color),
+    0 0 0.5rem var(--primary-highlight-color);
   margin: 0;
 }
 
