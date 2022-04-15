@@ -1,7 +1,8 @@
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
+  // Navigate
 } from 'react-router-dom';
 import './App.css';
 import MoviesMovieDetails from './components/movies/MoviesMovieDetails';
@@ -15,9 +16,10 @@ function App() {
       <Header />
       <main className='main'>
         <Routes>
-          <Route exact path="/estrenos" element={<section className="section animate__animated animate__fadeIn">Estrenos</section>} />
-          <Route exact path="/movies/:movieId" element={<MoviesMovieDetails />} />
-          <Route exact path="/" element={<Movies />} />
+          <Route path="/estrenos" element={<section className="section animate__animated animate__fadeIn">Estrenos</section>} />
+          <Route path="/movies/:movieId" element={<MoviesMovieDetails />} />
+          <Route path="/" element={<Movies />} />
+          {/* <Route path="*" element={<Navigate replace to="/" />} /> */}
           <Route path="*" element={<Error404 />} />
         </Routes>
       </main>

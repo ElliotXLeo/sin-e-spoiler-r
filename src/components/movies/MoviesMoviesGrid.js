@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import useApi from '../../hooks/useApi';
 import { useDebounce } from '../../hooks/useDebounce';
-import { useQuery } from '../../hooks/useQuery';
 import '../../styles/css/Movies.css';
 import Empty from '../sections/Empty';
 import Spinner from '../sections/Spinner';
@@ -14,7 +14,7 @@ const MoviesMoviesGrid = () => {
   const moviesButtonPrev = useRef();
   const moviesButtonNext = useRef();
 
-  const query = useQuery();
+  const [query] = useSearchParams();
   const search = query.get('search');
   const debouncedSearch = useDebounce(search, 300);
 

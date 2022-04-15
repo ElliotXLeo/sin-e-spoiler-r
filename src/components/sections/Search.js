@@ -1,28 +1,16 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useQuery } from "../../hooks/useQuery";
+import { useSearchParams } from "react-router-dom";
 
 const Search = () => {
-  const query = useQuery();
+  const [query, setQuery] = useSearchParams();
   const search = query.get('search');
-
-  const navigate = useNavigate();
-
-  const [movie, setMovie] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
   };
 
   const handleChange = (e) => {
-    setMovie(e.target.value);
-    navigate(`/?search=${e.target.value}`);
+    setQuery({search: e.target.value});
   };
-
-
-  useEffect(() => {
-    setMovie((search ? search : ''));
-  }, [search]);
 
   return (
     <form
@@ -35,7 +23,7 @@ const Search = () => {
           className="header-nav__form-input"
           id="search"
           name="search"
-          value={movie}
+          value={search ?? ""}
           onChange={handleChange}
           aria-label="Search Movies"
           required
