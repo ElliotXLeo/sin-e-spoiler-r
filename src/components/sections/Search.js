@@ -37,6 +37,7 @@ const Search = () => {
           name="search"
           value={movie}
           onChange={handleChange}
+          aria-label="Search Movies"
           required
         />
         <button className="header-nav__form-button">🔍</button>
