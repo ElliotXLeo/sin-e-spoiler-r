@@ -5,7 +5,7 @@ const useApi = (recurso) => {
   const [data, setData] = useState([]);
 
   const method = 'GET'
-  const url = `https://api.themoviedb.org/3${recurso}`;
+  const url = `${process.env.REACT_APP_API}${recurso}`;
 
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const useApi = (recurso) => {
         const options = {
           method,
           headers: {
-            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZjlmNzA1YjQ3ODRmNTQ3Mzc2ZjJjZDg4Mzg5MTY4NiIsInN1YiI6IjYyNTA1MjFlYTA1NWVmMDA2NTU3NTEzOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.jYHK5Rt55pBTHvGjrEGTjAXRVlGOdnDBpqBxhnhrCL4',
+            'Authorization': `Bearer ${process.env.REACT_APP_API_TOKEN}`,
             'Content-Type': 'application/json;charset=utf-8'
           },
           url
