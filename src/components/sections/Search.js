@@ -12,7 +12,6 @@ const Search = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(`/?search=${e.target.value}`);
   };
 
   const handleChange = (e) => {

@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import useApi from "../../hooks/useApi";
+import getMovieImg from "../../utils/getMovieImg";
 import Spinner from "../sections/Spinner";
 
 const MoviesMovieDetails = () => {
@@ -9,7 +10,8 @@ const MoviesMovieDetails = () => {
 
   const [movie] = useApi(recurso);
   const { poster_path, title, overview, genres } = movie;
-  const imageEndpoint = `https://image.tmdb.org/t/p/w500${poster_path}`;
+  
+  const imageEndpoint = getMovieImg(poster_path, 300);
 
   return (
     <>

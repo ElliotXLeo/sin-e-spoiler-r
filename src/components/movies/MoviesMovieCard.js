@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import getMovieImg from "../../utils/getMovieImg";
 
 const MoviesMovie = ({ movie }) => {
   const { id, title, poster_path } = movie;
-  const imageEndpoint = `https://image.tmdb.org/t/p/w300${poster_path}`;
+  const imageEndpoint = getMovieImg(poster_path, 300);
 
   return (
     <li className="movies__movie">
