@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import MoviesMovieDetails from './components/movies/MoviesMovieDetails';
+import Footer from './components/sections/Footer';
 import Header from './components/sections/Header';
 import Error404 from './pages/Error404';
 import Movies from './pages/Movies';
@@ -23,6 +24,7 @@ function App() {
           <Route path="*" element={<Error404 />} />
         </Routes>
       </main>
+      <Footer />
     </Router>
   );
 }

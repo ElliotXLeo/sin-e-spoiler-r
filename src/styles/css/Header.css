@@ -14,12 +14,12 @@
 }
 
 .header-nav {
-  padding: 1em 0;
+  padding: 0.5em 0;
   transition: var(--all-transitions);
 }
 
 .header-nav--scroll {
-  padding: 0.5em 0;
+  padding: 0.25em 0;
 }
 
 .header-nav__container {
