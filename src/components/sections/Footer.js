@@ -40,7 +40,7 @@ const Footer = () => {
               </a>
             </li>
             <li class="footer-nav__link-item">
-              <a href="https://nextjs-react-portafolio-fc.vercel.app" class="footer-nav__link">
+              <a href="https://elliotxleo.github.io/portafolio-web-elgs/" class="footer-nav__link">
                 <img src="https://i.postimg.cc/65TVxg9t/world-globe.png" alt="Página Personal"
                   class="footer-nav__link-image" />
               </a>
