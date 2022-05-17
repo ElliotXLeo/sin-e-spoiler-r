@@ -15,7 +15,7 @@ const Header = () => {
     const headerNavMenuIconContainer = document.getElementById('headerNavMenuIconContainer');
     const headerNavMenuCloseIconContainer = document.getElementById('headerNavMenuCloseIconContainer');
     const headerNavMenuLinkList = document.querySelector('.header-nav__menu-link-list');
-    const headeras = [...document.querySelectorAll('.header-nav__menu-link')];
+    const headerNavMenuLinks = [...document.querySelectorAll('.header-nav__menu-link')];
 
     const documentScroll = () => {
       header.classList.toggle('header--scroll', window.scrollY > 0);
@@ -33,7 +33,7 @@ const Header = () => {
     document.addEventListener('scroll', documentScroll);
     headerNavMenuIconContainer.addEventListener('click', openMenu);
     headerNavMenuCloseIconContainer.addEventListener('click', closeMenu);
-    headeras.forEach((element) => {
+    headerNavMenuLinks.forEach((element) => {
       element.addEventListener('click', closeMenu);
     });
   };
